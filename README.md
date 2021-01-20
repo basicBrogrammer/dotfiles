@@ -1,11 +1,9 @@
 dotfiles
 ========
+using github.com/thoughtbots/dotfiles & github.com/thoughtbots/rcm
 
-Installing the dotfiles will remove any conflicting .zshrc .vimrc directories.
-It will try to remove .zsh and .vim but will fail unless they are symlinks.
+1. git clone --recursive git@github.com:basicBrogrammer/dotfiles.git
+2. git clone --recursive git@github.com:basicBrogrammer/laptop-local.git
+3. `$ $HOME/laptop-local/init-laptop.sh`
 
-```zsh
-git clone --recursive git@github.com:adamhunter/dotfiles.git
-cd dotfiles
-rake dotfiles:install
-```
+Then, open vim and run `:PlugInstall`

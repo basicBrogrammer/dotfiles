@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-elixir": ">=0.6.1",
+    "coc-json": ">=1.2.6",
+    "coc-rls": ">=1.1.6",
+    "coc-snippets": ">=2.2.9",
+    "coc-solargraph": ">=1.1.8",
+    "coc-tailwindcss": ">=0.7.0",
+    "coc-tsserver": ">=1.4.15",
+    "coc-vetur": ">=1.2.3"
+  }
+}

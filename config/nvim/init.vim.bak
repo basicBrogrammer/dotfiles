@@ -1,0 +1,59 @@
+source $HOME/.vim/plug.vim
+source $HOME/.vim/keybindings.vim
+source $HOME/.vim/autocomplete.vim
+source $HOME/.vim/syntax.vim
+
+" =========== override defaults ===========
+let g:vim_better_default_file_key_mapping = 0 " no :update
+runtime! plugin/default.vim
+set shiftwidth=2   " Use indents of 4 spaces
+set tabstop=2      " An indentation every four columns
+set softtabstop=2  " Let backspace delete indent
+set foldmethod=syntax
+"set relativenumber!
+" ^^^^^^^^^^^ override defaults ^^^^^^^^^^^
+"
+"** When indenting in visual mode, return to visual mode **
+" indent with > or tab
+vmap > >gv
+vmap <tab> >gv
+" outdent with < or shift-tab
+vmap < <gv
+vmap <S-Tab> <gv
+" Shift-tab in insert mode is a backspace (unindent)
+imap <S-Tab> <BS>
+
+
+"set background=dark
+"colorscheme flattened_light
+"colorscheme challenger_deep
+colorscheme dracula
+let g:enable_bold_font = 1
+set termguicolors
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dracula'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+"let g:airline_section_y = '%{strftime("%b %d %l:%M %p")}'
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#coc#enabled = 1
+
+let g:magit_discard_untracked_do_delete=1
+
+
+" ************ NVIM IPY ****************
+"let g:nvim_ipy_perform_mappings = 0
+"let g:ipy_celldef = '# %%'
+
+let test#strategy = "vtr"
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+end
+let g:test#runner_commands = ['RSpec', 'Jest']
+let test#ruby#rspec#executable = 'rspec'
+
+nmap <C-J> :m +1 <CR>
+nmap <C-K> :m -2 <CR>
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
