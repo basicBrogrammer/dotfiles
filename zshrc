@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # af-magic, afowler, amuse, cloud, crunch, daveverwer, eastwood, gallois
-ZSH_THEME="agnoster2"
+ZSH_THEME=""
+
 
 # Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
@@ -23,6 +24,8 @@ plugins=(git osx docker asdf zsh-syntax-highlighting zsh-autosuggestions)
 set -k
 
 source $ZSH/oh-my-zsh.sh
+autoload -U promptinit; promptinit
+prompt pure
 
 source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/fzf-git.zsh"
@@ -34,9 +37,7 @@ source "$HOME/.profile"
 # autojump change directories  quick
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-eval "$(direnv hook $0)"
-# eval "$(nodenv init -)"
-# eval "$(rbenv init -)"
+# eval "$(direnv hook $0)"
 
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
@@ -45,8 +46,8 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
 fi
 source ~/.bin/tmuxinator.zsh
 # fzf via local installation
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-function motivate() {
-  open /Users/basicbrogrammer/Pictures/motivate.jpg
-}
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
