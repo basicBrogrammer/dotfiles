@@ -28,3 +28,6 @@ config/gtk-2.0/
 config/heroku/
 config/htop/
 config/tmuxinator/
+config/Webull Desktop/
+config/flutter/
+config/wireshark/

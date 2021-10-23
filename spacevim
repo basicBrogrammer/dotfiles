@@ -12,12 +12,12 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 " Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
 let g:spacevim_lsp_engine = 'coc'
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key', 'airline', 'file-manager',
-      \ 'git', 'better-motion', 'text-align',
-      \ 'syntax-checking', 'editing', 'programming', 'lsp',
-      \ 'ruby', 'rust', 'javascript', 'typescript', 'elixir', 'html', 'markdown',
-      \ 'vue'
-      \ ]
+  \ 'fzf', 'better-defaults', 'which-key', 'airline', 'file-manager',
+  \ 'better-motion', 'text-align', 'git',
+  \ 'syntax-checking', 'editing', 'programming', 'lsp',
+  \ 'ruby', 'rust', 'javascript', 'typescript', 'elixir', 'html', 'markdown',
+  \ 'vue'
+  \]
 
 " Uncomment the following line if your terminal(-emulator) supports true colors.
 let g:spacevim_enable_true_color = 1
@@ -120,4 +120,6 @@ function! UserConfig()
   " VueJS
   " only highlight JS, css, html
   let g:vue_pre_processors = []
+  " signify bug https://github.com/mhinz/vim-signify/issues/366
+  let g:signify_sign_delete_first_line = '-'
 endfunction

@@ -25,3 +25,5 @@ export FZF_DEFAULT_OPTS='
 # export CONDA_NEOVIM='/Users/basicbrogrammer/anaconda3/bin/python'
 
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+# Flutter Dev
+export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"

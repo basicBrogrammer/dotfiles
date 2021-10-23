@@ -19,7 +19,7 @@ source "$HOME/.zsh/exports.zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#tmux
-plugins=(git osx docker asdf zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git osx docker asdf)
 
 set -k
 
