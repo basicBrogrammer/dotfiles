@@ -11,7 +11,7 @@ cask 'iterm2'
 cask 'licecap' # gifs
 cask 'postman' # restricted
 cask 'slack'
-cask 'spectacle' # window management keybindings
+cask 'rectangle' # window management keybindings
 cask 'google-chrome'
 cask "firefox"
 cask 'spotify'
