@@ -13,20 +13,20 @@ cask 'postman' # restricted
 cask 'slack'
 cask 'rectangle' # window management keybindings
 cask 'google-chrome'
-cask "firefox"
+cask 'firefox'
 cask 'spotify'
-cask "visual-studio-code"
+cask 'visual-studio-code'
 
 # ==== *NOT* APPROVED ====
 # brew 'autojump' # directory changer
 # brew 'direnv' # ENV vars by directory
 brew 'htop' # should be fine
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
-brew "geckodriver" # firefox webdriver fo selenium
+brew 'geckodriver' # firefox webdriver fo selenium
 
 # ==== pending APPROVAL ====
-# brew 'fzf'  # vim dep
-# brew 'ripgrep' # vim dep
+brew 'fzf' # vim dep
+brew 'ripgrep' # vim dep
 
 # ==== Personal ====
 # cask 'discord'
