@@ -3,7 +3,6 @@ tap 'homebrew/cask'
 
 # ==== APPROVED ====
 brew 'neovim'
-brew 'pure'
 cask 'alacritty'
 cask 'raycast' # awesome spotlight replacement
 cask 'dozer'
