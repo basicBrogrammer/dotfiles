@@ -5,7 +5,7 @@ tap 'homebrew/cask'
 brew 'neovim'
 brew 'pure'
 cask 'alacritty'
-cask 'alfred' # awesome spotlight replacement
+cask 'raycast' # awesome spotlight replacement
 cask 'dozer'
 cask 'iterm2'
 cask 'licecap' # gifs
@@ -16,6 +16,8 @@ cask 'google-chrome'
 cask 'firefox'
 cask 'spotify'
 cask 'visual-studio-code'
+brew 'fzf' # vim dep
+brew 'ripgrep' # vim dep
 
 # ==== *NOT* APPROVED ====
 # brew 'autojump' # directory changer
@@ -23,10 +25,6 @@ cask 'visual-studio-code'
 brew 'htop' # should be fine
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
 brew 'geckodriver' # firefox webdriver fo selenium
-
-# ==== pending APPROVAL ====
-brew 'fzf' # vim dep
-brew 'ripgrep' # vim dep
 
 # ==== Personal ====
 # cask 'discord'

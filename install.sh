@@ -24,7 +24,7 @@ else # Linux basic setup
   sudo apt-get install software-properties-common
   sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
   sudo apt-get update
-  sudo apt-get install rcm
+  sudo apt-get install software-properties-common rcm fzf ripgrep
 
   export RCRC=$HOME/dotfiles/rcrc
 

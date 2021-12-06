@@ -10,16 +10,11 @@ asdf install yarn latest
 
 brew bundle --file=$HOME/dotfiles/Brewfile
 
-# if [ ! -d "$HOME/dotfiles/oh-my-zsh/custom/themes" ]; then
-#   mkdir "$HOME/dotfiles/oh-my-zsh/custom/themes"
-# fi
-
 # echo 'source $HOME/.asdf/asdf.sh' > $HOME/.profile
 
 if [ ! -L "$HOME/.oh-my-zsh" ]; then
     ln -s $HOME/dotfiles/oh-my-zsh/ $HOME/.oh-my-zsh
 fi
-
 
 if [ ! -d "$HOME/fonts" ]; then
     echo 'cloning powerline/fonts..'
