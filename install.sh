@@ -16,9 +16,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   sh mac 2>&1 | tee ~/laptop.log
 else # Linux basic setup
+  # instal omtmux
+  git clone https://github.com/gpakosz/.tmux.git
+  ln -s -f .tmux/.tmux.conf
   # install ohmyzsh
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  npm install --global pure
+  # install space-vim
+  bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
   # install RCM
   sudo apt-get install software-properties-common
