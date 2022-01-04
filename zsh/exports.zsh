@@ -4,6 +4,7 @@ export LESS="-R -X -F"
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export RCRC=$HOME/dotfiles/rcrc
 
 # postgresApp
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin

@@ -22,19 +22,16 @@ else # Linux basic setup
   # install ohmyzsh
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # install space-vim
-  bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
 
   # install RCM
-  sudo apt-get install software-properties-common
   sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
   sudo apt-get update
-  sudo apt-get install software-properties-common rcm fzf ripgrep
-
-  export RCRC=$HOME/dotfiles/rcrc
+  sudo apt-get install -y software-properties-common rcm fzf ripgrep
 
   # NOTE: this hasn't been tested
   echo 'linking rc files'
-  rcup
+  rcup -f
 fi
 
 # Great Git Defaults
