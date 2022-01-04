@@ -1,6 +1,7 @@
-ruby 2.6.5
+ruby 3.0.3
 nodejs 12.13.0
 elixir 1.10.4-otp-23
 erlang 23.0.3
 yarn 1.19.1
 rust 1.41.0
+golang 1.17.5

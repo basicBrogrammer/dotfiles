@@ -1,3 +1,3 @@
-EXCLUDES="README*.md LICENSE rcm-ignore iterm2 tmux-client-* vim config/nvim"
-SYMLINK_DIRS="config/coc config/nvim config/yarn oh-my-zsh zsh tmux"
+EXCLUDES="README*.md LICENSE rcm-ignore iterm2 tmux-client-* vim config/nvim oh-my-zsh"
+SYMLINK_DIRS="config/coc config/nvim config/yarn zsh tmux"
 DOTFILES_DIRS="$HOME/dotfiles"
