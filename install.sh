@@ -16,23 +16,23 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   sh mac 2>&1 | tee ~/laptop.log
 else # Linux basic setup
-  # instal omtmux
-  git clone https://github.com/gpakosz/.tmux.git
-  ln -s -f .tmux/.tmux.conf
-  # install ohmyzsh
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # install space-vim
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
-
   # install RCM
   sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
   sudo apt-get update
   sudo apt-get install -y software-properties-common rcm fzf ripgrep
 
-  # NOTE: this hasn't been tested
-  echo 'linking rc files'
-  rcup -f
 fi
+
+# instal omtmux
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+# install ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install space-vim
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
+
+echo 'linking rc files'
+rcup -f
 
 # Great Git Defaults
 git config --global pull.rebase true

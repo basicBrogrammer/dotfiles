@@ -12,10 +12,6 @@ brew bundle --file=$HOME/dotfiles/Brewfile
 
 # echo 'source $HOME/.asdf/asdf.sh' > $HOME/.profile
 
-if [ ! -L "$HOME/.oh-my-zsh" ]; then
-    ln -s $HOME/dotfiles/oh-my-zsh/ $HOME/.oh-my-zsh
-fi
-
 if [ ! -d "$HOME/fonts" ]; then
     echo 'cloning powerline/fonts..'
     cd $HOME
@@ -27,16 +23,9 @@ if [ ! -d "$HOME/fonts" ]; then
     echo 'installed powerline/fonts'
     echo 'now change in iterm2'
 fi
-export RCRC=$HOME/dotfiles/rcrc
-
-# NOTE: this hasn't been tested
-echo 'linking rc files'
-rcup
-# add vim-plug to neovim
-echo 'installing vim-plug'
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\n    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo 'installing neovim for pip3'
 pip3 install neovim
+npm install -g neovim
 
 echo 'Done-zo...'

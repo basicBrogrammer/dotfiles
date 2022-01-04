@@ -3,7 +3,6 @@ tap 'homebrew/cask'
 
 # ==== APPROVED ====
 brew 'neovim'
-cask 'alacritty'
 cask 'raycast' # awesome spotlight replacement
 cask 'dozer'
 cask 'iterm2'
@@ -11,14 +10,13 @@ cask 'licecap' # gifs
 cask 'postman' # restricted
 cask 'slack'
 cask 'google-chrome'
-cask 'firefox'
+cask 'brave'
 cask 'spotify'
 cask 'visual-studio-code'
 brew 'fzf' # vim dep
 brew 'ripgrep' # vim dep
 
 # ==== *NOT* APPROVED ====
-# brew 'autojump' # directory changer
 # brew 'direnv' # ENV vars by directory
 brew 'htop' # should be fine
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
