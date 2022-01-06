@@ -1,40 +1,156 @@
-echo 'Downloading thoughtbot/laptop....'
+#!/bin/sh
 
-cd $HOME
-# if macOS
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+# echo 'Downloading thoughtbot/laptop....'
 
-  if [ ! -L "$HOME/.laptop.local" ]; then
-      echo "Symlinking .laptop.local..."
-      ln -s  "$HOME/dotfiles/laptop.local" "$HOME/.laptop.local"
+# cd $HOME
+# # if macOS
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+  # curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+
+  # if [ ! -L "$HOME/.laptop.local" ]; then
+      # echo "Symlinking .laptop.local..."
+      # ln -s  "$HOME/dotfiles/laptop.local" "$HOME/.laptop.local"
+  # else
+      # echo ".laptop.local already linked..."
+  # fi
+
+  # echo 'Running `sh mac 2>&1 | tee ~/laptop.log`...'
+
+  # sh mac 2>&1 | tee ~/laptop.log
+# else # Linux basic setup
+  # # install RCM
+  # sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+  # sudo apt-get update
+  # sudo apt-get install -y software-properties-common rcm fzf ripgrep
+
+# fi
+
+# # instal omtmux
+# git clone https://github.com/gpakosz/.tmux.git
+# ln -s -f .tmux/.tmux.conf
+# # install ohmyzsh
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# # install space-vim
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
+
+# echo 'linking rc files'
+# rcup -f
+
+# # Great Git Defaults
+# git config --global pull.rebase true
+# git config --global fetch.prune true
+# git config --global diff.colorMoved zebra
+
+# Welcome to the thoughtbot laptop script!
+# Be prepared to turn your laptop (or desktop, no haters here)
+# into an awesome development machine.
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n$fmt\\n" "$@"
+}
+
+append_to_zshrc() {
+  local text="$1" zshrc
+  local skip_new_line="${2:-0}"
+
+  if [ -w "$HOME/.zshrc.local" ]; then
+    zshrc="$HOME/.zshrc.local"
   else
-      echo ".laptop.local already linked..."
+    zshrc="$HOME/.zshrc"
   fi
 
-  echo 'Running `sh mac 2>&1 | tee ~/laptop.log`...'
+  if ! grep -Fqs "$text" "$zshrc"; then
+    if [ "$skip_new_line" -eq 1 ]; then
+      printf "%s\\n" "$text" >> "$zshrc"
+    else
+      printf "\\n%s\\n" "$text" >> "$zshrc"
+    fi
+  fi
+}
 
-  sh mac 2>&1 | tee ~/laptop.log
-else # Linux basic setup
-  # install RCM
-  sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-  sudo apt-get update
-  sudo apt-get install -y software-properties-common rcm fzf ripgrep
+# shellcheck disable=SC2154
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
+set -e
+
+if [ ! -d "$HOME/.bin/" ]; then
+  mkdir "$HOME/.bin"
 fi
 
-# instal omtmux
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-# install ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# install space-vim
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
+if [ ! -f "$HOME/.zshrc" ]; then
+  touch "$HOME/.zshrc"
+fi
 
-echo 'linking rc files'
-rcup -f
+# shellcheck disable=SC2016
+append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
-# Great Git Defaults
-git config --global pull.rebase true
-git config --global fetch.prune true
-git config --global diff.colorMoved zebra
+HOMEBREW_PREFIX="/usr/local"
+
+if [ -d "$HOMEBREW_PREFIX" ]; then
+  if ! [ -r "$HOMEBREW_PREFIX" ]; then
+    sudo chown -R "$LOGNAME:admin" /usr/local
+  fi
+else
+  sudo mkdir "$HOMEBREW_PREFIX"
+  sudo chflags norestricted "$HOMEBREW_PREFIX"
+  sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
+fi
+
+update_shell() {
+  local shell_path;
+  shell_path="$(command -v zsh)"
+
+  fancy_echo "Changing your shell to zsh ..."
+  if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
+    fancy_echo "Adding '$shell_path' to /etc/shells"
+    sudo sh -c "echo $shell_path >> /etc/shells"
+  fi
+  sudo chsh -s "$shell_path" "$USER"
+}
+
+case "$SHELL" in
+  */zsh)
+    if [ "$(command -v zsh)" != '/usr/local/bin/zsh' ] ; then
+      update_shell
+    fi
+    ;;
+  *)
+    update_shell
+    ;;
+esac
+
+gem_install_or_update() {
+  if gem list "$1" --installed > /dev/null; then
+    gem update "$@"
+  else
+    gem install "$@"
+  fi
+}
+
+if ! command -v brew >/dev/null; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    fancy_echo "Installing Homebrew ..."
+      /bin/bash -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+      append_to_zshrc '# recommended by brew doctor'
+
+      # shellcheck disable=SC2016
+      append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+
+      export PATH="/usr/local/bin:$PATH"
+  else
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/spin/.zprofile
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    sudo apt-get install build-essential
+    brew install gcc
+  fi
+fi
+
+if brew list | grep -Fq brew-cask; then
+  fancy_echo "Uninstalling old Homebrew-Cask ..."
+  brew uninstall --force brew-cask
+fi
