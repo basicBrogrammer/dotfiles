@@ -46,10 +46,9 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
   source /usr/local/opt/fzf/shell/completion.zsh
 fi
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source_if_exist $HOME/.fzf.zsh
 
-source ~/.bin/tmuxinator.zsh
-# fzf via local installation
+source_if_exist $HOME/.bin/tmuxinator.zsh
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
