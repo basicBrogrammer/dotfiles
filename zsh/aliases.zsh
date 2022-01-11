@@ -1,3 +1,4 @@
+alias spinrb='/Users/jeremyward/src/sandbox/spinrb/exe/spinrb'
 # #directories
 alias c='clear; tmux clear-history 2> /dev/null; tmux clear-history 2> /dev/null'
 alias ipynb_to_py='jupyter nbconvert --to script'
