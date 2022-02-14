@@ -2,7 +2,7 @@ source_if_exist() {
   local path="$1"; shift
 
   # shellcheck disable=SC2059
-  [ -f $path ] && source $path && printf "sourced $path"
+  [ -f $path ] && source $path
 }
 
 # Path to your oh-my-zsh configuration.

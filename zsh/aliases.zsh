@@ -1,4 +1,4 @@
-alias spinrb='/Users/jeremyward/src/github.com/Shopify/lazy-spin/exe/spinrb'
+alias s='spin'
 # #directories
 alias c='clear; tmux clear-history 2> /dev/null; tmux clear-history 2> /dev/null'
 alias ipynb_to_py='jupyter nbconvert --to script'
