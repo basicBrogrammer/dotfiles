@@ -1,10 +1,12 @@
 -- command! Scratch lua require'tools'.makeScratch()
-require('plugins')
 local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
+vim.g.mapleader = " " 
 
 vim.cmd[[colorscheme tokyonight]]
+require("nvim-tree").setup()
+require('plugins')
 
 -- global options
 o.swapfile = true
