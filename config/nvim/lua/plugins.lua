@@ -3,7 +3,12 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
+  use 'nvim-lua/plenary.nvim'
+  use {
+       'nvim-treesitter/nvim-treesitter',
+       run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+   }
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
@@ -11,7 +16,7 @@ return require('packer').startup(function()
   use {
     "folke/which-key.nvim",
     config = function()
-      require("keybindings").setup()
+       require("keybindings").setup()
     end
   }
   use {
@@ -29,7 +34,16 @@ return require('packer').startup(function()
   }
   -- surround
   -- magit nvim thing
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   -- ctrl+p 
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- lsp
   -- auto jump
+   if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

@@ -1,7 +1,13 @@
 local M = {}
 
 local mappings = {
-  f = require("keybindings/file")
+  f = require("keybindings/file"),
+  b = require("keybindings/buffer"), -- buffer
+  p = require("keybindings/project"), -- project
+  w = {}, -- window
+  j = {}, -- jumpy/hoppy
+  m = {}, -- mode
+  g = {}, -- git
 }
 
 M.setup = function()
