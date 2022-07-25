@@ -11,6 +11,8 @@ local mappings = {
 	  name ="Git",
 	  s = { "<cmd>Neogit<cr>", "Status"}
   }, -- git
+  q = { "<cmd>q<cr>", "Quit"},
+  Q = { "<cmd>qa!<cr>", "Sudo Quit"}
 }
 
 M.setup = function()
