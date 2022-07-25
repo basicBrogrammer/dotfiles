@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   }
 
   -- lsp
+  use { "williamboman/mason.nvim" }
   -- auto jump
    if packer_bootstrap then
     require('packer').sync()

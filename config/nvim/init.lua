@@ -13,6 +13,7 @@ end
 
 require('plugins')
 require("nvim-tree").setup()
+require("mason").setup()
 vim.cmd[[colorscheme tokyonight]]
 
 -- global options
