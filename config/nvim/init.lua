@@ -7,6 +7,9 @@ vim.g.mapleader = " "
 require('plugins')
 require("nvim-tree").setup()
 require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {"solargraph", "typescript-language-server" }
+})
 vim.cmd[[colorscheme tokyonight]]
 
 -- global options
