@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     }
   }
   -- surround
+  use "tpope/vim-surround"
   -- magit nvim thing
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   -- ctrl+p 
