@@ -13,15 +13,13 @@ ln -s -f .tmux/.tmux.conf .
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-ln -s $HOME/dotfiles/spacevim $HOME/.spacevim
 ln -s $HOME/dotfiles/zsh $HOME/.zsh
 ln -sf $HOME/dotfiles/zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/tmux.conf.local $HOME/.tmux.conf.local
+ln -s $HOME/dotfiles/config/nvim $HOME/.config/nvim
 
-# install space-vim
-git clone https://github.com/liuchengxu/space-vim.git $HOME/space-vim
-cd $HOME/space-vim
-make neovim  # install space-vim for NeoVim
+# Packer Install
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 cd $HOME
 
