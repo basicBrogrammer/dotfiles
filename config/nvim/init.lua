@@ -1,31 +1,22 @@
--- command! Scratch lua require'tools'.makeScratch()
-local o = vim.o
-local wo = vim.wo
-local bo = vim.bo
-vim.g.mapleader = " " 
-
-require('plugins')
-require("nvim-tree").setup()
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = {"solargraph", "typescript-language-server" }
-})
-vim.cmd[[colorscheme tokyonight]]
-
--- global options
-o.swapfile = true
-o.dir = '/tmp'
-o.smartcase = true
-o.laststatus = 2
-o.hlsearch = true
-o.incsearch = true
-o.ignorecase = true
-o.scrolloff = 12
-o.splitright = true
-
--- window-local options
-wo.number = true
-wo.wrap = false
-
--- buffer-local options
-bo.expandtab = true
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.autocommands"
+require "user.colorscheme"
+require "user.cmp"
+require "user.telescope"
+require "user.treesitter"
+require "user.autopairs"
+require "user.comment"
+require "user.gitsigns"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.lualine"
+require "user.toggleterm"
+require "user.project"
+require "user.impatient"
+require "user.illuminate"
+require "user.indentline"
+require "user.alpha"
+require "user.lsp"
+require "user.dap"
