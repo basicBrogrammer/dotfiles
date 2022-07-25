@@ -8,6 +8,7 @@ return {
   f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
   n = { "New File" }, -- just a label. don't create any mapping
   q = { "<cmd>q<cr>", "Quit"},
+  Q = { "<cmd>qa!<cr>", "Quit"},
   s = { "<cmd>w<cr>", "Save"},
   t = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree"},
   S = { "<cmd>wa<cr>", "Save"},

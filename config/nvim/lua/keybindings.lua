@@ -7,7 +7,10 @@ local mappings = {
   w = {}, -- window
   j = {}, -- jumpy/hoppy
   m = {}, -- mode
-  g = {}, -- git
+  g = {
+	  name ="Git",
+	  s = { "<cmd>Neogit<cr>", "Status"}
+  }, -- git
 }
 
 M.setup = function()

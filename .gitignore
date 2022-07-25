@@ -31,3 +31,5 @@ config/tmuxinator/
 config/Webull Desktop/
 config/flutter/
 config/wireshark/
+config/nvim/plugin/packer_compiled.lua
+
