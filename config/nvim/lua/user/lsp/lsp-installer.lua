@@ -8,10 +8,10 @@ local servers = {
   "cssls",
   "html",
   "tsserver",
-  "pyright",
   "bashls",
   "jsonls",
   "yamlls",
+  "solargraph",
 }
 
 lsp_installer.setup()
