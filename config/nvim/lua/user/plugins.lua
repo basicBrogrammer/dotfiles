@@ -90,6 +90,7 @@ return packer.startup(function(use)
        require("user.keybindings").setup()
     end
   }
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
