@@ -5,7 +5,11 @@ local mappings = {
   b = require("user.keybindings/buffer"), -- buffer
   p = require("user.keybindings/project"), -- project
   w = {}, -- window
-  j = {}, -- jumpy/hoppy
+  j = {
+    name = "Jump",
+	  j = { "<cmd>HopChar1MW<cr>", "To Character"},
+	  w = { "<cmd>HopWordMW<cr>", "To Word"},
+  }, -- jumpy/hoppy
   m = {}, -- mode
   g = {
 	  name ="Git",
