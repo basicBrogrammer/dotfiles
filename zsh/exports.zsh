@@ -9,6 +9,7 @@ export RCRC=$HOME/dotfiles/rcrc
 # postgresApp
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
 #export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
 #export PATH=/usr/local/anaconda3/bin:"$PATH"
