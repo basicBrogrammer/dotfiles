@@ -18,6 +18,9 @@ ln -sf $HOME/dotfiles/zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/tmux.conf.local $HOME/.tmux.conf.local
 ln -s $HOME/dotfiles/config/nvim $HOME/.config/nvim
 
+# bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh -y)
+# ln -sf $HOME/dotfiles/config/lvim/config.lua $HOME/.config/lvim/config.lua
+
 # Packer Install
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 

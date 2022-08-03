@@ -12,6 +12,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 #export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
+export PATH"$HOME/.local/bin"
 #export PATH=/usr/local/anaconda3/bin:"$PATH"
 
 # fzf + ag configuration
