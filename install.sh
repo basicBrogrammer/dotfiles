@@ -22,7 +22,7 @@ ln -s $HOME/dotfiles/config/nvim $HOME/.config/nvim
 # ln -sf $HOME/dotfiles/config/lvim/config.lua $HOME/.config/lvim/config.lua
 
 # Packer Install
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 cd $HOME
 
