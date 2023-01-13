@@ -30,3 +30,4 @@ export FZF_DEFAULT_OPTS='
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 # Flutter Dev
 export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"
+export BUILDKITE_TOKEN="$(cat /etc/spin/secrets/buildkite)"
