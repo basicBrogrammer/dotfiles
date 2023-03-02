@@ -11,7 +11,7 @@ sudo apt-get install -y fzf ripgrep
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf .
 # install ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ln -s $HOME/dotfiles/zsh $HOME/.zsh
 ln -sf $HOME/dotfiles/zshrc $HOME/.zshrc
