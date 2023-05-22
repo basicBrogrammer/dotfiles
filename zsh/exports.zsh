@@ -1,4 +1,4 @@
-export EDITOR="nvim"
+export EDITOR="code"
 export LESS="-R -X -F"
 
 
@@ -32,5 +32,5 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"
 export BUILDKITE_TOKEN="$(cat /etc/spin/secrets/buildkite)"
 
-# rails 
+# rails
 export DISABLE_SPRING=true
