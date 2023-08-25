@@ -1,3 +1,4 @@
+alias update='dev stop && dev up && dev start'
 alias s='spin'
 # #directories
 alias c='clear; tmux clear-history 2> /dev/null; tmux clear-history 2> /dev/null'
