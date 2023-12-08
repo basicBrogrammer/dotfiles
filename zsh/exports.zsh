@@ -1,4 +1,4 @@
-export EDITOR="code"
+export EDITOR="nvim"
 export LESS="-R -X -F"
 
 
