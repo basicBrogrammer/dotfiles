@@ -52,9 +52,12 @@ source_if_exist $HOME/.bin/tmuxinator.zsh
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
 [[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
 if [ -e /Users/jeremyward/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jeremyward/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
