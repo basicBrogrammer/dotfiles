@@ -23,6 +23,7 @@ return {
         winblend = 0,
         mappings = {
           i = {
+            ["<c-t>"] = "select_tab",
             ["<C-j>"] = "move_selection_next",
             ["<C-k>"] = "move_selection_previous",
           },
