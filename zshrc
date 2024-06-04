@@ -12,7 +12,11 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # af-magic, afowler, amuse, cloud, crunch, daveverwer, eastwood, gallois
-ZSH_THEME="af-magic"
+if [[ -n $SPIN ]]; then
+  ZSH_THEME="agnoster"
+else
+  ZSH_THEME="af-magic"
+fi
 
 # Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
