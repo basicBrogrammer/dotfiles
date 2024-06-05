@@ -3,14 +3,15 @@ alias s='spin'
 alias bp='spin up business-platform --wait --memory=64 -n'
 # #directories
 alias c='clear; tmux clear-history 2> /dev/null; tmux clear-history 2> /dev/null'
-alias ipynb_to_py='jupyter nbconvert --to script'
 alias ll='ls -alhF'
 alias py='ipython'
 alias da='direnv allow'
 alias v='nvim'
 alias vd='nvim .'
 alias history='fc -l 1'
+alias ipynb_to_py='jupyter nbconvert --to script'
 
+# tmux related
 alias t='tmux'
 alias tat='tmux a -t'
 alias tk='tmux kill-session -t'
@@ -36,6 +37,7 @@ alias gprune='git remote prune origin'
 alias gflow='git reflow'
 alias gdno='git diff --name-only'
 alias gsno='git show --name-only'
+alias ggg='gwip;gpr;gunwip'
 
 # docker
 alias dk='docker'

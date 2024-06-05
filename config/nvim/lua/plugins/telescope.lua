@@ -26,6 +26,7 @@ return {
             ["<c-t>"] = "select_tab",
             ["<C-j>"] = "move_selection_next",
             ["<C-k>"] = "move_selection_previous",
+            ["<C-t>"] = "select_tab",
           },
         },
       },
