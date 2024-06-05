@@ -1,5 +1,6 @@
 alias update='dev stop && dev up && dev start'
 alias s='spin'
+alias ss='spin shell'
 alias bp='spin up business-platform --wait --memory=64 -n'
 # #directories
 alias c='clear; tmux clear-history 2> /dev/null; tmux clear-history 2> /dev/null'
@@ -13,6 +14,7 @@ alias ipynb_to_py='jupyter nbconvert --to script'
 
 # tmux related
 alias t='tmux'
+alias tmain='tmux new-session -A -s main'
 alias tat='tmux a -t'
 alias tk='tmux kill-session -t'
 alias ts='mux start'
