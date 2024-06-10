@@ -61,3 +61,7 @@ if [ -e /Users/jeremyward/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jer
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SPIN" ]]; then
+  tmux attach-session -t spin || tmux new-session -s spin
+fi
