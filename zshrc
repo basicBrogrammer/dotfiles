@@ -5,6 +5,24 @@ source_if_exist() {
   [ -f $path ] && source $path
 }
 
+tmux_session() {
+  if [ -z "$1" ]; then
+    echo "Usage: tmux_session <session_name>"
+    return 1
+  fi
+
+  local session_name="$1"
+
+  # Check if the session already exists
+  if tmux has-session -t "$session_name" 2>/dev/null; then
+    # Attach to the existing session
+    tmux attach-session -t "$session_name"
+  else
+    # Create a new session with the given name
+    tmux new-session -s "$session_name"
+  fi
+}
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.

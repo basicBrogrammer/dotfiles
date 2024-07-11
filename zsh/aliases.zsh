@@ -13,7 +13,7 @@ alias history='fc -l 1'
 alias ipynb_to_py='jupyter nbconvert --to script'
 
 # tmux related
-alias t='tmux'
+alias t='tmux_session'
 alias tmain='tmux new-session -A -s main'
 alias tat='tmux a -t'
 alias tk='tmux kill-session -t'
