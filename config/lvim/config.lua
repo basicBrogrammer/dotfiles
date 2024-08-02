@@ -54,43 +54,43 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
 -- }
 lvim.builtin.which_key.mappings["f"] = {
-  name = "file", -- optional group name
-  -- bug?
-  -- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
-  ["1"] = "which_key_ignore", -- special label to hide it in the popup
-  d = { "<cmd>NvimTreeFindFile<cr>", "Toggle Tree at File" },
-  e = "Edit File", -- same as above
-  f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-  n = { "New File" }, -- just a label. don't create any mapping
-  q = { "<cmd>q<cr>", "Quit" },
-  Q = { "<cmd>qa!<cr>", "Quit" },
-  s = { "<cmd>w<cr>", "Save" },
-  t = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
-  S = { "<cmd>wa<cr>", "Save" },
+	name = "file", -- optional group name
+	-- bug?
+	-- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
+	["1"] = "which_key_ignore", -- special label to hide it in the popup
+	d = { "<cmd>NvimTreeFindFile<cr>", "Toggle Tree at File" },
+	e = "Edit File", -- same as above
+	f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+	n = { "New File" }, -- just a label. don't create any mapping
+	q = { "<cmd>q<cr>", "Quit" },
+	Q = { "<cmd>qa!<cr>", "Quit" },
+	s = { "<cmd>w<cr>", "Save" },
+	t = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
+	S = { "<cmd>wa<cr>", "Save" },
 }
 lvim.builtin.which_key.mappings["p"] = {
-  name = "Project",
-  f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  p = { "<cmd>Telescope projects<cr>", "Find Project" },
+	name = "Project",
+	f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+	p = { "<cmd>Telescope projects<cr>", "Find Project" },
 }
 lvim.builtin.which_key.mappings["b"] = {
-  name = "Buffers",
-  b = { "<cmd>Telescope buffers<cr>", "Select Buffer" },
-  d = { "<cmd>bdelete<cr>", "Delete" }, -- maybe try Bdelete!
+	name = "Buffers",
+	b = { "<cmd>Telescope buffers<cr>", "Select Buffer" },
+	d = { "<cmd>bdelete<cr>", "Delete" }, -- maybe try Bdelete!
 }
 lvim.builtin.which_key.mappings["j"] = {
-  name = "Jump",
-  j = { "<cmd>HopChar1MW<cr>", "To Character" },
-  w = { "<cmd>HopWordMW<cr>", "To Word" },
+	name = "Jump",
+	j = { "<cmd>HopChar1MW<cr>", "To Character" },
+	w = { "<cmd>HopWordMW<cr>", "To Word" },
 }
 lvim.builtin.which_key.mappings["g"] = {
-  name = "Git",
-  s = { "<cmd>Neogit<cr>", "Status" }
+	name = "Git",
+	s = { "<cmd>Neogit<cr>", "Status" },
 }
 lvim.builtin.which_key.mappings["s"] = {
-  name = "Search",
-  c = { "<cmd>nohlsearch<CR>", "Clear" },
-  l = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+	name = "Search",
+	c = { "<cmd>nohlsearch<CR>", "Clear" },
+	l = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 }
 lvim.builtin.which_key.mappings["q"] = { "<cmd>q<cr>", "Quit" }
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>qa!<cr>", "Sudo Quit" }
@@ -107,11 +107,10 @@ lvim.builtin.which_key.mappings["Q"] = { "<cmd>qa!<cr>", "Sudo Quit" }
 --     t = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
 --   }
 
-
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
+-- lvim.builtin.alpha.active = true
+-- lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -119,18 +118,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+	"bash",
+	"c",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"typescript",
+	"tsx",
+	"css",
+	"rust",
+	"java",
+	"yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -199,14 +198,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "tpope/vim-surround" },
-  { "TimUntersberger/neogit" },
-  { "TimUntersberger/neogit" },
-  { "folke/tokyonight.nvim" },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
+	{ "tpope/vim-surround" },
+	{ "TimUntersberger/neogit" },
+	{ "TimUntersberger/neogit" },
+	{ "folke/tokyonight.nvim" },
+	{
+		"folke/trouble.nvim",
+		cmd = "TroubleToggle",
+	},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
