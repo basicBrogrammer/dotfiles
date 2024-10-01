@@ -1,18 +1,19 @@
 export EDITOR="nvim"
 export LESS="-R -X -F"
 
+# rails
+export DISABLE_SPRING=true
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export RCRC=$HOME/dotfiles/rcrc
+export PATH="$(yarn global bin):$PATH"
 
 # postgresApp
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.local/bin/:$PATH"
+#export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+#export PATH="/usr/local/sbin:$PATH"
+#export PATH="$HOME/.local/bin/:$PATH"
 #export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-export PATH="$(yarn global bin):$PATH"
-export PATH="$HOME/.local/bin"
 #export PATH=/usr/local/anaconda3/bin:"$PATH"
 
 # fzf + ag configuration
@@ -27,9 +28,8 @@ export FZF_DEFAULT_OPTS='
 
 # export CONDA_NEOVIM='/Users/basicbrogrammer/anaconda3/bin/python'
 
-export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+# export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 # Flutter Dev
-export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"
+# export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"
 
-# rails
-export DISABLE_SPRING=true
+
