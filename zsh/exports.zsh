@@ -29,4 +29,3 @@ export FZF_DEFAULT_OPTS='
 # rails
 export DISABLE_SPRING=1
 export SUPPRESS_SPRING_WARNING=true
->>>>>>> d1bb1ed (what am i doing?)
