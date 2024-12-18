@@ -71,7 +71,7 @@ alias yet='yarn ember test'
 alias nr='npm run'
 
 # random
-alias weather='curl http://wttr.in/27587'
+alias weather='curl http://wttr.in/27023'
 alias spot='spotify'
 alias gith='cat ~/dotfiles/rcm-ignore/git-omz-doc.text | grep'
 alias blueVolume='defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int'

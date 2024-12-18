@@ -26,10 +26,7 @@ export FZF_DEFAULT_OPTS='
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
 '
 
-# export CONDA_NEOVIM='/Users/basicbrogrammer/anaconda3/bin/python'
-
-# export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
-# Flutter Dev
-# export PATH="$PATH:/Users/basicbrogrammer/flutter/bin"
-
-
+# rails
+export DISABLE_SPRING=1
+export SUPPRESS_SPRING_WARNING=true
+>>>>>>> d1bb1ed (what am i doing?)

@@ -42,7 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#tmux
-plugins=(git macos z docker asdf)
+plugins=(git macos z docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,4 +82,9 @@ alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SPIN" ]]; then
   tmux attach-session -t spin || tmux new-session -s spin
+fi
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
 fi

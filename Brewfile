@@ -4,9 +4,7 @@ tap 'homebrew/cask'
 # ==== APPROVED ====
 brew 'neovim'
 cask 'raycast' # awesome spotlight replacement
-cask 'dozer'
 cask 'iterm2'
-cask 'licecap' # gifs
 cask 'postman' # restricted
 cask 'slack'
 cask 'google-chrome'
