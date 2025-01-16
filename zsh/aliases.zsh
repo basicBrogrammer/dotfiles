@@ -26,20 +26,13 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -m fast'
 
 # git
-alias gla="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
-alias grom='nocorrect git rebase origin/master'
 alias gpr='nocorrect git pull --rebase'
-alias gm='nocorrect git merge --no-ff'
-#alias gp='nocorrect git push origin'
-alias gphm='git push heroku master'
-alias gpdm='git push dokku master'
 alias gclean='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gprune='git remote prune origin'
-alias gflow='git reflow'
 alias gdno='git diff --name-only'
 alias gsno='git show --name-only'
 alias ggg='gwip;gpr;gunwip'
+alias lg='lazygit'
 
 # docker
 alias dk='docker'
