@@ -12,7 +12,7 @@ return {
     --  },
     -- change some options
     keys = {
-      { "<leader>pf", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+      { "<leader>pf", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
       { "<leader>bb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
     },
     opts = {
