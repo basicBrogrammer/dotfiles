@@ -6,6 +6,7 @@ export DISABLE_SPRING=true
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export RCRC=$HOME/dotfiles/rcrc
 export PATH="$(yarn global bin):$PATH"
 
