@@ -91,3 +91,6 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
 fi
 # opencode
 export PATH=/Users/basicbrogrammer/.opencode/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/basicbrogrammer/.antigravity/antigravity/bin:$PATH"
